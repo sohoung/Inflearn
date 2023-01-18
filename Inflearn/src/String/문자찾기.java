@@ -16,7 +16,7 @@ public class 문자찾기 {
         char[] ch = str2.toCharArray(); // 입력받은 str2에 대한 char형 배열 생성
         int answer = 0;  // 정답을 위한 int형 변수
         for(int i = 0; i < str1.length(); i++) {
-            if(c[i] == ch[0]) {
+            if(c[i] == ch[0]) { // 입력받은 문자와 문자열을 비교
                 answer++;
             }
         }
