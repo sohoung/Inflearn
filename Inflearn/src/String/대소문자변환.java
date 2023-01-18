@@ -10,7 +10,7 @@ public class 대소문자변환 {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();  // 입력받을 문자열
         String answer = "";  // 출력값을 위한 String형 answer
-        for(int i = 0; i < str.length(); i++) {
+        for(int i = 0; i < str.length(); i++) {  // for문으로 조건 검색
             if(Character.isLowerCase(str.charAt(i))){  // 소문자이면 대문자로
                 answer += Character.toUpperCase(str.charAt(i));
             }
