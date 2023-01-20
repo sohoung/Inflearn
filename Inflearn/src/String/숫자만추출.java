@@ -7,8 +7,15 @@ import java.util.Scanner;
 // 입력 예시 : g0en2T0s8eSoft
 // 출력 에시 : 208
 public class 숫자만추출 {
+    public int solution(String str) {
+        int answer = 0;
+        
+        return answer;
+    }
     public static void main(String[] args) {
         숫자만추출 t = new 숫자만추출();
         Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+
     }
 }
