@@ -23,15 +23,16 @@ public class 뒤집은소수 {
     public ArrayList<Integer> solution(int n, int[] arr) {
         ArrayList<Integer> answer = new ArrayList<>();
         for(int i = 0; i < n; i++) {
-            int tmp = arr[i];
-            int res = 0;
+            int tmp = arr[i];  // 먼저 뒤집을 수를 먼저 int형 변수 tmp에 저장
+            int res = 0;       // 뒤집은 수를 저장하는 int형 변수
             while(tmp > 0) {
-                int t = tmp % 10;
-                res = res * 10 + t;
-                tmp = tmp / 10;
+                int t = tmp % 10;    // 일의 자릿 수를 저장
+                res = res * 10 + t;  // 일의 자릿 수부터 저장해준다.
+                tmp = tmp / 10;      // 일의 자릿 수를 저장했으므로 일의 자릿 수를 제외한 수를 다시 tmp에 저장한다.
+                // 이 순서를 꼭 암기 할 것
             }
-            if(isPrime(res)) {
-                answer.add(res);
+            if(isPrime(res)) {       // 뒤집은 수가 소수인지 아닌지 체크
+                answer.add(res);     // 뒤집은 수가 소수가 아니라면 answer에 add해준다.
             }
         }
         return answer;
