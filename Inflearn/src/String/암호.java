@@ -21,9 +21,26 @@ import java.util.Scanner;
 // 입력 예시 : 4
 //           #****###**#####**#####**##**
 // 출력 예시 : COOL
+
+
 public class 암호 {
+    public String solution(String str, int n) {
+        String answer = "";  // 출력 값을 저장하기 위한 String형 변수
+        for(int i = 0; i < n; i++) {  // n번 만큼 수행하는 for문
+            String tmp = str.substring(0,7).replace('#','1').replace('*','0');
+            // String형 변수 tmp에 str을 0번부터 7개를 짤라서 replace 메서드를 사용하여 #을 1로 *을 0으로 바꿔준다.
+            int num = Integer.parseInt(tmp,2);
+            // int형 변수 num에 tmp를 2진수로 바꿔서 저장해준다.
+            answer += (char)num;  // 2진수로 바꾼 num을 char형으로 형변환을 해주고 answer에 누적합을 해준다.
+            str = str.substring(7);  // str을 다시 6번 index까지 짜르고 7번 index부터 시작하는 str을 새로 만들어준다.
+        }
+        return answer;
+    }
     public static void main(String[] args) {
         암호 t = new 암호();
         Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String str = sc.next();
+        System.out.println(t.solution(str,n));
     }
 }
