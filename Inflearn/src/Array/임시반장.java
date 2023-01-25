@@ -14,7 +14,26 @@ import java.util.Scanner;
 
 public class 임시반장 {
     public int solution(int n, int[][] arr) {
-        int answer = 0;
+        int answer = 0;  // 학생 수를 저장하기 위한 int형 변수
+        int max = 0;     // 최대값을 구하기 위해서 비교를 위한 변수
+        for(int i = 0; i < n; i++) {
+            int cnt = 0;  // 학생들이 같은 반으로 만난 횟수
+            for(int j = 0; j < n; j++) {
+                for(int k = 0; k < n; k++) {
+                    if(arr[i][k] == arr[j][k]) {
+                        // 1번 학생의 1학년 부터 시작을 하여서 1번 학생의 1학년 2,3,4,5번 학생의 1학년을 비교하면서 수행한다.
+                        // 만약 같은 반이 있다면 cnt를 증가시켜주고 1명이라도 만난 사람이 있다면 조건에 충족하기 때문에 더 이상 for문을 수행 할 필요가 없다.
+                        // 그러므로 if 조건문이 true가 된다면 cnt를 증가시켜주고 break를 걸어주어서 for문을 빠져나오게 해준다.
+                        cnt++;
+                        break;
+                    }
+                }
+            }
+            if(cnt > max) {  
+                max = cnt;
+                answer = i+1;   // index 숫자 자체를 학생 번호로 생각하기 때문에 index는 0부터 시작하므로 1을 더해주어서 학생 수를 표현
+            }
+        }
         return answer;
     }
     public static void main(String[] args) {
