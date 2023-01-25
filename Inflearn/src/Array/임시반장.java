@@ -29,7 +29,7 @@ public class 임시반장 {
                     }
                 }
             }
-            if(cnt > max) {  
+            if(cnt > max) {
                 max = cnt;
                 answer = i+1;   // index 숫자 자체를 학생 번호로 생각하기 때문에 index는 0부터 시작하므로 1을 더해주어서 학생 수를 표현
             }
