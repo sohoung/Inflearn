@@ -14,8 +14,8 @@ import java.util.Scanner;
 public class 멘토링 {
     public int solution(int n,  int m, int[][] arr) {
         int answer = 0;
-        for(int i = 1; i <= n; i++) {
-            for(int j = 1; j <= n; j++) {
+        for(int i = 1; i <= n; i++) {  // i를 등수로 생각
+            for(int j = 1; j <= n; j++) {  // j를 등수로 생각
                 int cnt = 0;
                 for(int k = 0; k < m; k++) {
                     int pi = 0;
