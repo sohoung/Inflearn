@@ -16,7 +16,7 @@ public class 멘토링 {
         int answer = 0;
         for(int i = 1; i <= n; i++) {  // i를 등수로 생각
             for(int j = 1; j <= n; j++) {  // j를 등수로 생각
-                int cnt = 0;
+                int cnt = 0;  // cnt에 의미는 한 명의 사람이 한 사람의 성적을 넘었다는 의미이다.
                 for(int k = 0; k < m; k++) {
                     int pi = 0;
                     int pj = 0;
@@ -32,7 +32,7 @@ public class 멘토링 {
                         cnt++;
                     }
                 }
-                if(cnt == m) {
+                if(cnt == m) {  // m은 테스트 갯수이다. cnt가 테스트 갯수이면 멘토 멘티의 짝이 성립된다는 의미이다.
                     answer++;
                 }
             }
