@@ -11,20 +11,19 @@ import java.util.Scanner;
 // 출력 예시 : 3
 public class 연속부분수열 {
     public int solution(int n, int m, int[] arr) {
-        int answer = 0;
-        int lt = 0;
-        int rt = 1;
-        int sum = 0;
-        while() {
-            if(sum < m) {
-                sum += arr[rt++];
-            }
-            else if(sum > m) {
-                sum -= arr[lt++];
-            }
-            else {
+        int answer = 0;  // 출력값을 저장하기 위한 변수
+        int lt = 0;      // 맨 처음 index 포인터
+        int sum = 0;     // 입력받은 m과 비교할 변수
+        for(int rt = 0; rt < n; rt++) {
+            sum += arr[rt];  // rt 포인터 값을 sum에 더한다.
+            if(sum == m) {   // 입력받은 m과 sum이 같다면 answer 증가
                 answer++;
-                rt++;
+            }
+            while(sum >= m) {// sum이 m보다 같거나 큰 경우 sum에서 lt index 데이터를 빼주고 sum이 m보다 작을 때 까지 while문을 실행해준다.
+                sum -= arr[lt++];  // sum이 m보다 작을 때까지 while문 실행
+                if(sum == m) {
+                    answer++;
+                }
             }
         }
         return answer;
