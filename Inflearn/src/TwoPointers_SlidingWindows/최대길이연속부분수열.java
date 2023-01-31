@@ -13,7 +13,22 @@ import java.util.Scanner;
 public class 최대길이연속부분수열 {
     public int solution(int n,int m,int[] arr) {
         int answer = 0;
-        
+        int cnt = 0;  // 0에서 1로 몇 번 바꿨는지 카운트
+        int len = 0;  // 최대 길이를 저장하는 변수
+        int lt = 0;
+        for(int rt = 0; rt < n; rt++) {
+            if(arr[rt] == 0) {  // arr 배열의 값이 0이면
+                arr[rt] = 1;
+                cnt++;
+                len = rt-lt+1;
+                if(cnt == m) {
+                    answer = Math.max(answer,len);
+                }
+            }
+            else {              // arr 배열의 값이 1일 때
+                
+            }
+        }
         return answer;
     }
     public static void main(String[] args) {
